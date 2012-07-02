@@ -1,0 +1,37 @@
+Category:
+  actAs: { Timestampable: ~ }
+  columns:
+    name: { type: string(255), notnull: true, unique: true }
+
+Book:
+  actAs: { Timestampable: ~ }
+  columns:
+    category_id:  { type: integer, notnull: true }
+    name: { type: string(255), notnull: true, unique: true }
+    description:  { type: string(255), notnull: true }
+    is_public:    { type: boolean, notnull: true, default: 1 }
+    is_available: { type: boolean, notnull: true, default: 0 }
+  relations:
+    Category: { onDelete: CASCADE, local: category_id, foreign: id, foreignAlias: Books }
+
+Subscriber:
+  actAs: { Timestampable: ~ }
+  columns:
+    name:      { type: string(255), notnull: true }
+    email:     { type: string(255), notnull: true, unique: true }
+    is_active: { type: boolean, notnull: true, default: 0 }
+  relations:
+    Categories:
+      class: Category
+      refClass: CategorySubscriber
+      local: subscriber_id
+      foreign: category_id
+      foreignAlias: Subscribers
+
+CategorySubscriber:
+  columns:
+    category_id:  { type: integer, primary: true }
+    subscriber_id: { type: integer, primary: true }
+  relations:
+    Category:  { onDelete: CASCADE, local: category_id, foreign: id }
+    Subscriber: { onDelete: CASCADE, local: subscriber_id, foreign: id }

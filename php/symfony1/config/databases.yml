@@ -1,0 +1,12 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/07-Databases
+
+# vi config/databases.yml
+all:
+  doctrine:
+    class: sfDoctrineDatabase
+    param:
+      dsn:
+        pgsql:host=localhost;dbname=elasticsearch
+      username: postgres
+      password: s3cr3t

@@ -1,0 +1,5 @@
+autoload:
+  elastica:
+    name: Elastica
+    path: %SF_LIB_DIR%/vendor/Elastica/lib/Elastica
+    recursive: true
