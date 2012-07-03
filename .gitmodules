@@ -1,0 +1,9 @@
+[submodule "php/symfony1/lib/vendor/symfony"]
+	path = php/symfony1/lib/vendor/symfony
+	url = https://github.com/symfony/symfony1.git
+[submodule "php/symfony1/lib/vendor/Elastica"]
+	path = php/symfony1/lib/vendor/Elastica
+	url = https://github.com/ruflin/Elastica.git
+[submodule "php/symfony1/web/css/blueprint-css"]
+	path = php/symfony1/web/css/blueprint-css
+	url = https://github.com/joshuaclayton/blueprint-css.git
